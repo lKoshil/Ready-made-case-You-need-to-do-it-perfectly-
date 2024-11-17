@@ -1,76 +1,71 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html {
-  height: 100%;
+html, body {
+    height: 100%;
+    min-width: 760px;
 }
 
-.page {
-  position: relative;
-  display: flex;
-  height: 100%;
-  margin: 0;
-  font-family: "Regular",;
-  background-color: #fec7ee;
+body {
+    min-width: 760px;
+    position: relative;
+    height: 100%;
 }
 
-.page::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.3);
+.title {
+    font-family: 'Raleway';
+    font-weight: 800;
+    font-size: 116px;
+    text-align: center;
+    width: 730px;
+    margin: 0 auto;
 }
 
-.page__video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.title::after {
+    content: '*';
 }
 
-.page__heading {
-  z-index: 1;
-  max-width: 720px;
-  margin: 0 auto;
-  font-size: 116px;
-  letter-spacing: 3.5px;
-  text-align: center;
-  text-transform: uppercase;
+.title:hover::before {
+    content: 'На самом деле нет.\AВажнее &mdash; научиться ошибаться.';
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    background: white;
+    text-align: left;
+    color: black;
+    padding: 10px;
+    font-family: "Raleway";
+    font-weight: 400;
+    font-size: 2vw;
+    z-index: 15;
+    border: 1px solid #000;
+    width: 48vw;
+    height: auto;
+    box-shadow: 0px 6px black;
+    border-radius: 20px;
 }
 
-.page__heading::after {
-  content: "*";
-  position: relative;
+.title:hover {
+    color: #4C4C4C;;
 }
 
-.page__heading:hover {
-  color: #4c4c4c;
-  cursor: default;
+.title:hover + .video{
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
 }
 
-.page__heading:hover::before {
-  content: "На самом деле нет.\AВажнее &mdash; научиться ошибаться.";
-  position: absolute;
-  top: 180px;
-  right: 20px;
-  max-width: 760px;
-  border: 2px solid #000;
-  border-radius: 20px;
-  padding: 36px 44px;
-  box-shadow: 0 12px 0 #000;
-  color: #000;
-  font-weight: normal;
-  font-size: 35px;
-  line-height: 100%;
-  letter-spacing: normal;
-  text-align: left;
-  text-transform: initial;
-  background-color: #fff;
-  white-space: pre;
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
